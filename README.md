@@ -27,3 +27,27 @@ docker build -t image_name .
 вместо image_name напишите своё название образа
 
 docker run -d -p 3000:3000 --name имя_контейнера
+
+чтобы совершать операции в бд использу  те команду
+docker exec -it mydatabase-container psql -U myuser -d mydb
+
+где mydatabase-container замените на название вашей бд
+
+базовые операции sql
+
+CREATE TABLE users (
+    user_id INT AUTO_INCREMENT PRIMARY KEY,
+    username VARCHAR(255) NOT NULL,
+    email VARCHAR(255) NOT NULL,
+    password VARCHAR(255) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+создание бд
+
+INSERT INTO users (username, email, password) VALUES ('JohnDoe', 'johndoe@example.com', 'mypassword');
+добавление пользователя
+
+
+SELECT * FROM users; выводим всех пользователей
+
+
