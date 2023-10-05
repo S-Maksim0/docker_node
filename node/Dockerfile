@@ -6,7 +6,7 @@ WORKDIR /docker
 
 # Копирование зависимостей и исходного кода внутрь контейнера
 COPY package*.json ./
-COPY server.js .
+COPY index.js .
 
 # Установка зависимостей
 RUN npm install
